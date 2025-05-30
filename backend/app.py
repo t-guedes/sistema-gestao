@@ -1,9 +1,10 @@
 from fastapi import FastAPI, HTTPException, Depends
 from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy.orm import Session
-from modelos import Base, Cliente, Ticket
+from modelos import Base, Cliente, Ticket, TipoPessoa, EstadoTicket
 from esquemas import ClienteCriar, ClienteExibir, ClienteEditar, TicketCriar, TicketExibir, TicketEditar
 from banco_de_dados import engine, get_db
+from sqlalchemy.exc import IntegrityError
 
 Base.metadata.create_all(bind=engine)
 
@@ -28,6 +29,18 @@ def cadastrar_cliente(cliente: ClienteCriar, db: Session = Depends(get_db)):
     db.commit()
     db.refresh(novo_cliente)
     return novo_cliente
+
+@aplicacao.post("/clientes/", response_model=ClienteExibir)
+def cadastrar_cliente(cliente: ClienteCriar, db: Session = Depends(get_db)):
+    novo_cliente = Cliente(**cliente.dict())
+    db.add(novo_cliente)
+    try:
+        db.commit()
+        db.refresh(novo_cliente)
+        return novo_cliente
+    except IntegrityError:
+        db.rollback()
+        raise HTTPException(status_code=400, detail="Email já cadastrado.")
 
 @aplicacao.get("/clientes/", response_model=list[ClienteExibir])
 def listar_clientes(db: Session = Depends(get_db)):

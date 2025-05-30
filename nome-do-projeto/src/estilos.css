@@ -1,0 +1,164 @@
+:root {
+  --bg-main: #f5f7fa;
+  --container-bg: #fff;
+  --text-main: #222;
+  --heading: #38b000;
+  --input-bg: #f9fafb;
+  --input-border: #b0b8c1;
+  --input-focus: #38b000;
+  --label: #2c2c2c;
+  --button-bg: linear-gradient(90deg, #5e60ce 70%, #38b000 100%);
+  --button-hover: linear-gradient(90deg, #38b000 60%, #5e60ce 100%);
+  --button-text: #fff;
+  --table-bg: #f8fafc;
+  --table-th-bg: #e2e8f0;
+  --table-th-text: #38b000;
+  --table-row-hover: #e2e8f055;
+}
+
+.dark-theme {
+  --bg-main: linear-gradient(120deg, #232323 0%, #232936 100%);
+  --container-bg: #1c1d21;
+  --text-main: #e9eaea;
+  --heading: #b9fbc0;
+  --input-bg: #24272e;
+  --input-border: #393c44;
+  --input-focus: #b9fbc0;
+  --label: #c9c7d3;
+  --button-bg: linear-gradient(90deg, #5e60ce 70%, #38b000 100%);
+  --button-hover: linear-gradient(90deg, #38b000 60%, #5e60ce 100%);
+  --button-text: #fff;
+  --table-bg: #232323;
+  --table-th-bg: #22232a;
+  --table-th-text: #b9fbc0;
+  --table-row-hover: #2c2d38;
+}
+
+/* Exemplo do resto do seu CSS usando as variáveis: */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: var(--bg-main);
+  min-height: 100vh;
+  color: var(--text-main);
+}
+
+.container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 32px 28px;
+  background: var(--container-bg);
+  border-radius: 18px;
+  box-shadow: 0 8px 36px rgba(0,0,0,0.12);
+}
+
+h1, h2 {
+  color: var(--heading);
+  margin-bottom: 20px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 11px 14px;
+  margin-bottom: 22px;
+  border: 1.5px solid var(--input-border);
+  border-radius: 7px;
+  font-size: 1rem;
+  background: var(--input-bg);
+  color: var(--text-main);
+  transition: border 0.2s, box-shadow 0.2s, background 0.2s;
+  outline: none;
+  box-sizing: border-box;
+}
+input:focus, select:focus, textarea:focus {
+  border-color: var(--input-focus);
+  box-shadow: 0 0 0 2px var(--input-focus)66;
+  background: var(--container-bg);
+}
+
+label {
+  margin-bottom: 7px;
+  display: block;
+  font-weight: 500;
+  color: var(--label);
+}
+
+button {
+  background: var(--button-bg);
+  color: var(--button-text);
+  border: none;
+  padding: 11px 28px;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-top: 10px;
+  box-shadow: 0 2px 10px rgba(94, 96, 206, 0.10);
+  transition: background 0.16s, box-shadow 0.16s, transform 0.13s;
+  font-weight: 500;
+}
+button:hover, button:focus {
+  background: var(--button-hover);
+  box-shadow: 0 4px 18px #5e60ce22;
+  transform: translateY(-1px) scale(1.04);
+}
+
+.tabela {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 32px;
+  background: var(--table-bg);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.14);
+}
+.tabela th, .tabela td {
+  border-bottom: 1px solid #343642;
+  padding: 12px 10px;
+  text-align: left;
+}
+.tabela th {
+  background: var(--table-th-bg);
+  color: var(--table-th-text);
+  font-weight: 700;
+  font-size: 1.04rem;
+}
+.tabela tr:last-child td {
+  border-bottom: none;
+}
+.tabela tr:hover {
+  background: var(--table-row-hover);
+}
+.theme-toggle {
+  position: absolute;
+  top: 24px;
+  right: 36px;
+  background: rgba(30, 30, 35, 0.92);
+  border: none;
+  border-radius: 50%;
+  padding: 9px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.10);
+  cursor: pointer;
+  transition: background 0.17s, box-shadow 0.15s, transform 0.12s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+.theme-toggle:hover, .theme-toggle:focus {
+  background: rgba(65, 65, 85, 0.95);
+  transform: scale(1.05);
+  outline: none;
+}
+@media (max-width: 650px) {
+  .theme-toggle {
+    top: 12px;
+    right: 10px;
+    padding: 7px;
+  }
+}
+.container {
+  position: relative; /* para o botão ficar relativo ao container */
+}
