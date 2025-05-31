@@ -37,7 +37,6 @@ O sistema foi projetado para atender às necessidades de **pequenas e médias em
 - **Backend:** FastAPI (Python)
 - **Banco de Dados:** SQLite
 - **ORM:** SQLAlchemy
-- **Validação de dados:** Pydantic
 - **Integração:** Fetch API
 - **Outros:** Axios, React Router, TailwindCSS (ou outro framework CSS utilizado)
 
