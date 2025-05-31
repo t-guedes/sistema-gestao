@@ -9,6 +9,7 @@ function App() {
   const [pagina, setPagina] = useState('clientes');
   const [clienteEditando, setClienteEditando] = useState(null);
   const [ticketEditando, setTicketEditando] = useState(null);
+
   const [temaEscuro, setTemaEscuro] = useState(() => {
     return localStorage.getItem('tema') === 'escuro';
   });
