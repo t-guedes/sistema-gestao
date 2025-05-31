@@ -18,7 +18,7 @@ O sistema foi projetado para atender às necessidades de **pequenas e médias em
 - **Registro e Controle de Tickets de Suporte**
   - Associação a clientes  
   - Categorização por tipo de solicitação  
-  - Acompanhamento por status (aberto, em andamento, resolvido, etc.)  
+  - Acompanhamento por status (aberto, em andamento, fechado)  
   - Histórico de alterações  
 
 - **Interface Moderna e Responsiva**
