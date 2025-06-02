@@ -55,7 +55,7 @@ function FormularioCliente({ clienteEditando, aoSalvar, aoCancelar }) {
         setForm({ nome: '', email: '', telefone: '', tipo: 'Pessoa Física' });
       })
       .catch((e) => {
-        // Aqui mudamos a mensagem para caso seja erro de rede
+        // Aqui mudamos a mensagem para o mesmo e-mail
         if (e.message === "Failed to fetch") {
           setErro("Já existe um cadastro com este e-mail.");
         } else {
