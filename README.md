@@ -39,7 +39,7 @@ O sistema foi projetado para atender às necessidades de **pequenas e médias em
 - **ORM:** SQLAlchemy
 - **Validação de dados:** Pydantic
 - **Integração:** Fetch API
-- **Outros:** Axios, React Router, TailwindCSS (ou outro framework CSS utilizado)
+- **Outros:** Axios, React Router, ThemeToggle para modo claro/escuro
 
 ## Instalação e Execução do Projeto
 
