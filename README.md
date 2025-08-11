@@ -75,6 +75,8 @@ pip install -r requirements.txt
 
 ```bash
 uvicorn app:app --reload --host 0.0.0.0 --port 8000
+ou
+uvicorn app:aplicacao --reload --host 0.0.0.0 --port 8000
 ```
 
 O backend estará disponível em: [http://localhost:8000](http://localhost:8000)
